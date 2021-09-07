@@ -20,11 +20,11 @@ saveBtn.addEventListener('click', () => {
     user.gender = gender.value;
 
     saveOnStorage(user);
-    window.location.href = "/upload.html";
+    window.location.href = "./upload.html";
 });
 
 cancelBtn.addEventListener('click', () => {
-    window.location.href = "/upload.html";
+    window.location.href = "./upload.html";
 });
 
 loadStored();
@@ -53,7 +53,7 @@ function loadStored() {
         gender.value = user.gender;
     } else {
         alert('Datos de usuario no cargados.\r\nSe redirigirá a la página de carga de datos.');
-        window.location.href = "/index.html";
+        window.location.href = "./index.html";
     }
 }
 

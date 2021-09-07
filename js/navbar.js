@@ -1,5 +1,5 @@
 const userBtn = document.getElementById('user-navbar');
 
 userBtn.addEventListener('click', ()=> {
-    window.location.href = "/profile.html";
+    window.location.href = "./profile.html";
 });

@@ -72,7 +72,7 @@ submit.addEventListener('click', () => {
         saveOnStorage(user);
     }
 
-    window.location.href = "/upload.html";
+    window.location.href = "./upload.html";
 });
 
 loadStored();
@@ -80,7 +80,7 @@ loadStored();
 function loadStored() {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-        window.location.href = "/profile.html";
+        window.location.href = "./profile.html";
     }
 }
 

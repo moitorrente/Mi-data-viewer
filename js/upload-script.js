@@ -197,78 +197,78 @@ filenameSport.addEventListener('click', () => {
 
 bodyTableBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'body');
-    window.location.href = "/table-display.html";
+    window.location.href = "./table-display.html";
 });
 
 bodyChartBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'body');
-    window.location.href = "/chart.html";
+    window.location.href = "./chart.html";
 });
 
 activityTableBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'activity');
-    window.location.href = "/table-display.html";
+    window.location.href = "./table-display.html";
 });
 
 activityChartBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'activity');
-    window.location.href = "/chart.html";
+    window.location.href = "./chart.html";
 });
 
 activityMinuteTableBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'activity-minute');
-    window.location.href = "/table-display.html";
+    window.location.href = "./table-display.html";
 });
 
 activityMinuteChartBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'activity-minute');
-    window.location.href = "/chart.html";
+    window.location.href = "./chart.html";
 });
 activityStageTableBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'activity-stage');
-    window.location.href = "/table-display.html";
+    window.location.href = "./table-display.html";
 });
 
 activityStageChartBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'activity-stage');
-    window.location.href = "/chart.html";
+    window.location.href = "./chart.html";
 });
 heartrateTableBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'heartrate');
-    window.location.href = "/table-display.html";
+    window.location.href = "./table-display.html";
 });
 
 heartrateChartBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'heartrate');
-    window.location.href = "/chart.html";
+    window.location.href = "./chart.html";
 });
 heartrateAutoTableBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'heartrate-auto');
-    window.location.href = "/table-display.html";
+    window.location.href = "./table-display.html";
 });
 
 heartrateAutoChartBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'heartrate-auto');
-    window.location.href = "/chart.html";
+    window.location.href = "./chart.html";
 });
 
 sleepTableBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'sleep');
-    window.location.href = "/table-display.html";
+    window.location.href = "./table-display.html";
 });
 
 sleepChartBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'sleep');
-    window.location.href = "/chart.html";
+    window.location.href = "./chart.html";
 });
 sportTableBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'sport');
-    window.location.href = "/table-display.html";
+    window.location.href = "./table-display.html";
 });
 
 sportChartBtn.addEventListener('click', () => {
     sessionStorage.setItem('saved', 'sport');
-    window.location.href = "/chart.html";
+    window.location.href = "./chart.html";
 });
 
 checkSaved();
