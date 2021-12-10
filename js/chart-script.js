@@ -145,9 +145,36 @@ const dataOptions = {
                     unit: 'day'
                 }
             }
+        },
+        onClick: function (c, i) {
+            if (i.length > 0) {
+                const ind = i[0].index;
+                generateBodyMetrics(ind);
+                showDetail(ind)
+            }
         }
     }
 }
+
+const dataDetail = document.getElementById('data-detail');
+function showDetail(index) {
+    let text = '';
+    dataTable.header.forEach(header => {
+        text += (`${header}: ${dataTable.data[header][index]} <br>`);
+    });
+    dataDetail.innerHTML = text;
+}
+
+function generateBodyMetrics(index) {
+    console.log(dataTable)
+    console.log(dataTable.data.impedance[index])
+    console.log(dataTable.data.weight[index])
+    console.log(index)
+    const bodyData = new bodyMetrics('male', 28, 185, dataTable.data.weight[index], dataTable.data.impedance[index]);
+    console.log(bodyData)
+}
+
+
 
 const datactx = document.getElementById('dataChart').getContext('2d');
 const dataChart = new Chart(datactx, dataOptions);
@@ -181,6 +208,8 @@ function checkSaved() {
     }
 }
 
+const linearRegressionFormula = document.getElementById('linear-regression-formula');
+
 run();
 function run(dataset) {
     data.datasets.length = 0;
@@ -204,7 +233,13 @@ function run(dataset) {
         addDataset(observator.y, observator.label, { fill: true, pointRadius: observator.pointRadius, borderWidth: 1.5 });
     }
     addLinearRegression();
-    addMovingAverage()
+    addMovingAverage();
+
+    let interpolated = interpolate(observator.rawX, observator.y);
+    let linear = linearRegression(observator.rawX, interpolated.values);
+    const sign = linear.intersection < 0 ? '-' : '+';
+    linearRegressionFormula.value = `f(x)=${linear.slope.toExponential(2)}·x ${sign} ${Math.abs(linear.intersection.toFixed(2))}`;
+    console.log(linear)
 }
 
 function addDataset(points, label, options) {

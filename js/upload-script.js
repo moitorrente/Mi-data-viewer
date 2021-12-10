@@ -302,11 +302,11 @@ function errorHandler(evt) {
 
 const bodyOptions = {
     type: 'body',
-    x: 'timestamp'
+    x: 'time'
 }
 
 const xAxis = {
-    'body': 'timestamp',
+    'body': 'time',
     'activity': 'date',
     'activity-stage': 'date',
     'heartrate': 'date',
@@ -347,8 +347,10 @@ function parse(file, fileProperties, type) {
     if(type=='heartrate'){
         if (variables.date) variables.date = variables.date.map(timestamp => moment.unix(timestamp).format());
     }
+ 
+    variables.timestamp = variables.time;
     if (variables.lastSyncTime) variables.lastSyncTime = variables.lastSyncTime.map(timestamp => moment.unix(timestamp).format());
-    if (variables.timestamp) variables.timestamp = variables.timestamp.map(timestamp => moment.unix(timestamp).format());
+    //if (variables.timestamp) variables.timestamp = variables.timestamp.map(timestamp => moment.unix(timestamp).format());
     if (variables.start) variables.start = variables.start.map(timestamp => moment.unix(timestamp).format());
     if (variables.stop) variables.stop = variables.stop.map(timestamp => moment.unix(timestamp).format());
     if (variables.startTime) variables.startTime = variables.startTime.map(timestamp => moment.unix(timestamp).format());

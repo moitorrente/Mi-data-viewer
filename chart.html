@@ -29,6 +29,7 @@
 
     <script defer src="./js/statistics.js"></script>
     <script defer src="./js/interpolation.js"></script>
+    <script defer src="./js/body-metrics.js"></script>
     <script defer src="./js/linear-regresion.js"></script>
 
 
@@ -54,10 +55,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/upload.html">Panel de datos</a>
+                        <a class="nav-link active" aria-current="page" href="./upload.html">Panel de datos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/table-display.html">Datos</a>
+                        <a class="nav-link" href="./table-display.html">Datos</a>
                     </li>
 
                 </ul>
@@ -195,7 +196,7 @@
 
         </div>
         <div class="row my-4">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="card">
                     <div class="card-content">
                         <div class="">
@@ -220,20 +221,8 @@
                                         </div>
                                         <label class="input-group-text" for="dataset-select">Interpolar datos</label>
                                     </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-text">
-                                            <input class="form-check-input" type="checkbox" id="linear-regression">
-                                        </div>
-                                        <label class="input-group-text" for="dataset-select">Regresión lineal</label>
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-text">
-                                            <input class="form-check-input" type="checkbox" id="moving-average">
-                                        </div>
-                                        <label class="input-group-text" for="dataset-select">Moving average</label>
-                                        <input type="number" id="moving-average-num" class="form-control" value=10>
 
-                                    </div>
+
 
 
                                     <!-- <div class="input-group mb-3">
@@ -252,8 +241,38 @@
                     </div>
                 </div>
 
+                <div class="card">
+                    <div class="card-content">
+                        <div class="">
+                            <div class="media d-flex p-2" id="auto-upload-btn">
+                                <div class="media-body mx-4">
+                                    <h4 class="center">Añadir datasets</h4>
+                                    <hr>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input" type="checkbox" id="moving-average">
+                                        </div>
+                                        <label class="input-group-text" for="dataset-select">Moving average</label>
+                                        <input type="number" id="moving-average-num" class="form-control" value=10>
+
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input" type="checkbox" id="linear-regression">
+
+                                        </div>
+                                        <label class="input-group-text" for="dataset-select">Regresión lineal</label>
+                                        <input type="text" id="linear-regression-formula" class="form-control display-6"
+                                            disabled value=10>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="card p-4">
                     <div class="card-content">
                         <canvas id="dataChart"></canvas>
@@ -262,13 +281,24 @@
 
 
             </div>
-            <div class="col-md-0">
+            <div class="col-md-1">
+                <div class="card w-100">
+                    <div class="card-content w-100">
+                        <div class="w-100">
+                            <div class="media d-flex p-2 pointer w-100" id="auto-upload-btn">
+                                <div class="media-body mx-4" id='data-detail'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- <div class="row my-4">
             <canvas id="pieChart"></canvas>
 
         </div> -->
+
     </div>
 </body>
 
